@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <input id="search" type="text">
+    <input id="searchBtn" type="button" value="Search">
+    <script>
+        const searchBtn = document.getElementById("searchBtn");
+        const search = document.getElementById("search");
+        let timeout;
+        search.addEventListener("input",()=>{
+            clearTimeout(timeout);
+            timeout = setTimeout(() => {
+                console.log(search.value);
+            }, 500);
+        })
+    </script>
+</body>
+</html>

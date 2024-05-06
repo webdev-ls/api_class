@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        async function getProducts(){
+            const url = "https://fakestoreapi.com/products";
+            const request = await fetch(url);
+            const response = await request.json();
+            console.log(response);
+        }
+        getProducts();
+    </script>
+</body>
+</html>

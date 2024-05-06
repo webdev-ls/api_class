@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // const  url = "https://icanhazdadjoke.com/slack";
+        // const payload = {
+        //     method : "POST",
+        //     body : JSON.stringify({})
+        // }
+        // let joke = "Yaha New Joke Ayega";
+        // fetch(url,payload)
+        //     .then(response => response.json())
+        //     .then(data=>{
+        //         console.log(data);
+        //         joke = data['attachments'][0]['text'];
+        //         console.log("joke from request", joke);
+        //     })
+        // console.log("joke outside", joke);
+
+
+        // async await 
+        async function getJoke(){
+            const  url = "https://icanhazdadjoke.com/slack";
+            const payload = {
+                method : "POST",
+                body : JSON.stringify({})
+            }
+            const response = await fetch(url,payload);
+            const data = await response.json();
+            // console.log(data);
+            return data['attachments'][0]['text'];
+        }
+
+        // async 
+        // const joke = getJoke();
+        // console.log(joke);
+        getJoke().then(data=>{
+            console.log(data);
+        })
+    </script>
+</body>
+</html>
